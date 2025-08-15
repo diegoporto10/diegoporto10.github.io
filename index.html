@@ -3,11 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Diego Porto — Data Analytics Portfolio</title>
   <meta name="description" content="Portfolio of Diego Porto — Data Analyst. Power BI, SQL, Python, Excel projects with business storytelling and live dashboards." />
+  <meta name="theme-color" content="#0b0e12">
+
+  <!-- Social preview -->
+  <meta property="og:title" content="Diego Porto — Data Analytics Portfolio">
+  <meta property="og:description" content="Power BI · SQL · Python · Excel · Business Storytelling">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://diegoporto10.github.io/">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#0b0e12; --card:#12161d; --muted:#9aa4b2; --text:#e6edf3; --accent:#79c0ff; --chip:#1a2430; --shadow:0 10px 30px rgba(0,0,0,.35);
@@ -27,6 +37,7 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid #263244;background:#0f141b;color:var(--text);box-shadow:var(--shadow);cursor:pointer}
     .btn.primary{background:linear-gradient(135deg,#1f6feb,#7551ff);border:none}
     .btn:hover{transform:translateY(-1px)}
+
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
     .card{grid-column:span 12;background:var(--card);border:1px solid #1f2937;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
     @media(min-width:800px){.card{grid-column:span 6}}
@@ -36,33 +47,20 @@
     .kpis{display:flex;gap:12px;flex-wrap:wrap}
     .kpi{background:#0f141b;border:1px dashed #273446;padding:10px 12px;border-radius:12px;font-size:12px}
     .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
     .section-title{display:flex;align-items:center;justify-content:space-between;margin:24px 0 12px}
     .section-title h2{margin:0;font-size:18px}
     .note{color:var(--muted);font-size:13px}
-    footer{margin-top:32px;color:var(--muted);font-size:13px;text-align:center}
+
     .hero{background:linear-gradient(180deg,rgba(31,111,235,.15),rgba(0,0,0,0));border:1px solid #1f2937;border-radius:16px;padding:20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
     .hero h2{margin:0 0 6px}
     .hero p{margin:0;color:var(--muted)}
 
-    /* NEW: screenshot grid for project cards */
-    .shots{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:12px;
-      margin-top:12px;
-    }
-    .shot{
-      width:100%;
-      height:auto;
-      border-radius:10px;
-      border:1px solid #1f2937;
-      background:#0f141b;
-      box-shadow:var(--shadow);
-    }
-    @media(max-width:680px){
-      .shots{grid-template-columns:1fr}
-    }
+    /* Thumbs for project 1 */
+    .thumbs{display:flex;gap:8px;margin:12px 0 4px;flex-wrap:wrap}
+    .thumb{width:120px;height:74px;object-fit:cover;border-radius:8px;border:1px solid #1f2937;background:#0f141b}
   </style>
+
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -103,11 +101,12 @@
 
     <div class="section-title" id="projects">
       <h2>Projects</h2>
-      <div class="note">Replace the placeholders with your real links and metrics.</div>
+      <div class="note">Replace the placeholders on projects 2–4 with your real links and metrics when ready.</div>
     </div>
 
     <section class="grid" id="project-list">
-      <!-- PROJECT 1 -->
+
+      <!-- PROJECT 1 — Retail (wired up) -->
       <article class="card">
         <h3>Retail Sales Intelligence — Power BI</h3>
         <div class="meta">
@@ -115,40 +114,36 @@
           <span class="tag">Stack: Power BI · DAX · Excel</span>
           <span class="tag">Dataset: Kaggle (5k+ rows)</span>
         </div>
-        <p>Executive dashboard tracking revenue, margin and churn by region. Identified a 12% MoM drop in the South region tied to stockouts; recommended inventory buffer and vendor consolidation.</p>
+        <p>Executive dashboard tracking revenue, margin and seasonality; spot trends (MoM, YoY), holiday impact, and departments to prioritize.</p>
+
         <div class="kpis">
           <div class="kpi">+8.4% YoY revenue</div>
           <div class="kpi">−17% churn in Q2</div>
           <div class="kpi">+2.1 pp margin</div>
         </div>
 
-        <!-- NEW: screenshots -->
-        <div class="shots">
-          <a href="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/executive-overview.png" target="_blank" rel="noopener">
-            <img class="shot" loading="lazy"
-                 src="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/executive-overview.png"
-                 alt="Retail Sales Dashboard — Executive Overview">
+        <!-- Thumbnails -->
+        <div class="thumbs">
+          <a href="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/refs/heads/main/images/executive-overview.png" target="_blank" rel="noopener">
+            <img class="thumb" src="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/refs/heads/main/images/executive-overview.png" alt="Retail dashboard — Executive Overview">
           </a>
-          <a href="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/monthly-trend.png" target="_blank" rel="noopener">
-            <img class="shot" loading="lazy"
-                 src="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/monthly-trend.png"
-                 alt="Retail Sales — Monthly Trend">
+          <a href="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/refs/heads/main/images/monthly-trend.png" target="_blank" rel="noopener">
+            <img class="thumb" src="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/refs/heads/main/images/monthly-trend.png" alt="Retail dashboard — Monthly Sales Trend">
           </a>
-          <a href="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/profitability.png" target="_blank" rel="noopener">
-            <img class="shot" loading="lazy"
-                 src="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/profitability.png"
-                 alt="Retail Sales — Profitability">
+          <a href="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/refs/heads/main/images/profitability.png" target="_blank" rel="noopener">
+            <img class="thumb" src="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/refs/heads/main/images/profitability.png" alt="Retail dashboard — Profitability">
           </a>
         </div>
 
         <div class="actions">
-          <a class="btn" href="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/executive-overview.png" target="_blank" rel="noopener">View Dashboard</a>
+          <a class="btn" href="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/refs/heads/main/images/executive-overview.png" target="_blank" rel="noopener">View Screens</a>
+          <a class="btn" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/raw/main/pbix/retail-sales-intelligence.pbix" download>PBIX (Download)</a>
           <a class="btn" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi" target="_blank" rel="noopener">GitHub Repo</a>
           <a class="btn" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/blob/main/docs/case-study.md" target="_blank" rel="noopener">Case Study</a>
         </div>
       </article>
 
-      <!-- PROJECT 2 -->
+      <!-- PROJECT 2 — placeholders now -->
       <article class="card">
         <h3>HR Analytics — Attrition & Tenure</h3>
         <div class="meta">
@@ -163,13 +158,13 @@
           <div class="kpi">5 quick wins</div>
         </div>
         <div class="actions">
-          <a class="btn" href="#" target="_blank">View Dashboard</a>
-          <a class="btn" href="#" target="_blank">GitHub Repo</a>
-          <a class="btn" href="#" target="_blank">Case Study</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">View Dashboard</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Case Study</a>
         </div>
       </article>
 
-      <!-- PROJECT 3 -->
+      <!-- PROJECT 3 — placeholders now -->
       <article class="card">
         <h3>Brazil Tourism — CPLP & Nomads</h3>
         <div class="meta">
@@ -184,13 +179,13 @@
           <div class="kpi">3 policy levers</div>
         </div>
         <div class="actions">
-          <a class="btn" href="#" target="_blank">View Dashboard</a>
-          <a class="btn" href="#" target="_blank">GitHub Repo</a>
-          <a class="btn" href="#" target="_blank">Case Study</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">View Dashboard</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Case Study</a>
         </div>
       </article>
 
-      <!-- PROJECT 4 -->
+      <!-- PROJECT 4 — placeholders now -->
       <article class="card">
         <h3>Support Desk — SLA & Backlog</h3>
         <div class="meta">
@@ -205,9 +200,9 @@
           <div class="kpi">FRT −18%</div>
         </div>
         <div class="actions">
-          <a class="btn" href="#" target="_blank">View Dashboard</a>
-          <a class="btn" href="#" target="_blank">GitHub Repo</a>
-          <a class="btn" href="#" target="_blank">Case Study</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">View Dashboard</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Case Study</a>
         </div>
       </article>
     </section>
@@ -215,6 +210,7 @@
     <div class="section-title" id="about">
       <h2>About</h2>
     </div>
+
     <section class="card">
       <p>Hi! I’m <strong>Diego Porto</strong>, a data analyst based in Paraíba, Brazil. I work with Power BI, SQL, Python and Excel to help teams make confident decisions. I focus on clean data models, clear KPIs and pragmatic storytelling. Open to remote roles and freelance work.</p>
       <ul>
