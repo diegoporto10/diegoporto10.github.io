@@ -43,6 +43,25 @@
     .hero{background:linear-gradient(180deg,rgba(31,111,235,.15),rgba(0,0,0,0));border:1px solid #1f2937;border-radius:16px;padding:20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
     .hero h2{margin:0 0 6px}
     .hero p{margin:0;color:var(--muted)}
+
+    /* NEW: screenshot grid for project cards */
+    .shots{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+    .shot{
+      width:100%;
+      height:auto;
+      border-radius:10px;
+      border:1px solid #1f2937;
+      background:#0f141b;
+      box-shadow:var(--shadow);
+    }
+    @media(max-width:680px){
+      .shots{grid-template-columns:1fr}
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -102,10 +121,30 @@
           <div class="kpi">−17% churn in Q2</div>
           <div class="kpi">+2.1 pp margin</div>
         </div>
+
+        <!-- NEW: screenshots -->
+        <div class="shots">
+          <a href="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/executive-overview.png" target="_blank" rel="noopener">
+            <img class="shot" loading="lazy"
+                 src="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/executive-overview.png"
+                 alt="Retail Sales Dashboard — Executive Overview">
+          </a>
+          <a href="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/monthly-trend.png" target="_blank" rel="noopener">
+            <img class="shot" loading="lazy"
+                 src="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/monthly-trend.png"
+                 alt="Retail Sales — Monthly Trend">
+          </a>
+          <a href="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/profitability.png" target="_blank" rel="noopener">
+            <img class="shot" loading="lazy"
+                 src="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/profitability.png"
+                 alt="Retail Sales — Profitability">
+          </a>
+        </div>
+
         <div class="actions">
-          <a class="btn" href="#" target="_blank">View Dashboard</a>
-          <a class="btn" href="#" target="_blank">GitHub Repo</a>
-          <a class="btn" href="#" target="_blank">Case Study</a>
+          <a class="btn" href="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/main/images/executive-overview.png" target="_blank" rel="noopener">View Dashboard</a>
+          <a class="btn" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi" target="_blank" rel="noopener">GitHub Repo</a>
+          <a class="btn" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/blob/main/docs/case-study.md" target="_blank" rel="noopener">Case Study</a>
         </div>
       </article>
 
