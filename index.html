@@ -24,6 +24,12 @@
     :root{
       --bg:#0b0e12; --card:#12161d; --muted:#9aa4b2; --text:#e6edf3; --accent:#79c0ff; --chip:#1a2430;
       --stroke:#1f2937; --stroke-2:#263244; --shadow:0 10px 30px rgba(0,0,0,.35);
+      /* badge colors */
+      --pdf:#ef4444;      /* red */
+      --pbix:#3b82f6;     /* blue */
+      --gif:#10b981;      /* green */
+      --report:#a78bfa;   /* violet */
+      --download:#f59e0b; /* amber */
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial;background:var(--bg);color:var(--text)}
@@ -47,10 +53,7 @@
     .meta{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 12px}
     .tag{background:var(--chip);border:1px solid #223045;color:var(--muted);padding:6px 10px;border-radius:999px;font-size:12px}
     .kpis{display:flex;gap:12px;flex-wrap:wrap}
-    .kpi{background:#0f141b;border:1px dashed #273446;padding:10px 12px;border-radius:12px;font-size:12px}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .chip{background:#0f141b;border:1px solid #273446;padding:6px 10px;border-radius:999px;font-size:12px;color:var(--text)}
-    .chip:hover{filter:brightness(1.05);transform:translateY(-1px);transition:.15s ease}
+    .kpi{background:#0f141b;border:1px dashed #273446;padding:10px 12px;border-radius:12px;font-size:12px;color:var(--text)}
     .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
     .section-title{display:flex;align-items:center;justify-content:space-between;margin:24px 0 12px}
     .section-title h2{margin:0;font-size:18px}
@@ -61,6 +64,21 @@
     .hero p{margin:0;color:var(--muted)}
     .thumbs{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
     .thumbs img{width:220px;height:120px;object-fit:cover;border-radius:10px;border:1px solid var(--stroke-2);display:block}
+
+    /* ——— tiny badges (helper) ——— */
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .badge{
+      display:inline-flex;align-items:center;justify-content:center;
+      height:24px;padding:0 10px;border-radius:999px;font-size:12px;
+      font-weight:600;letter-spacing:.2px;text-transform:uppercase;
+      border:1px solid rgba(255,255,255,.08);background:#0f141b;color:var(--text)
+    }
+    .badge--pdf{background:color-mix(in lab, var(--pdf) 35%, #0b0e12); border-color: color-mix(in lab, var(--pdf) 60%, #0b0e12); color:#fff}
+    .badge--pbix{background:color-mix(in lab, var(--pbix) 30%, #0b0e12); border-color: color-mix(in lab, var(--pbix) 60%, #0b0e12); color:#fff}
+    .badge--gif{background:color-mix(in lab, var(--gif) 30%, #0b0e12); border-color: color-mix(in lab, var(--gif) 60%, #0b0e12); color:#06251a}
+    .badge--report{background:color-mix(in lab, var(--report) 30%, #0b0e12); border-color: color-mix(in lab, var(--report) 60%, #0b0e12); color:#fff}
+    .badge--download{background:color-mix(in lab, var(--download) 30%, #0b0e12); border-color: color-mix(in lab, var(--download) 60%, #0b0e12); color:#160e03}
+    .badge:hover{filter:brightness(1.08); transform:translateY(-1px); transition:.15s ease}
   </style>
 </head>
 <body>
@@ -121,11 +139,11 @@
           </a>
         </div>
 
-        <!-- Badges row (PDF + PBIX + Case study) -->
-        <div class="chips">
-          <a class="chip" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/raw/main/docs/Retail-Executive-Overview.pdf" target="_blank" rel="noopener">PDF</a>
-          <a class="chip" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/raw/main/Retail%20Sales%20Intelligence.pbix" target="_blank" rel="noopener">PBIX</a>
-          <a class="chip" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/blob/main/docs/case-study.md" target="_blank" rel="noopener">Report</a>
+        <!-- Tiny badges (PDF + PBIX + Report) -->
+        <div class="badges">
+          <a class="badge badge--pdf" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/raw/main/docs/Retail-Executive-Overview.pdf" target="_blank" rel="noopener">PDF</a>
+          <a class="badge badge--pbix" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/raw/main/Retail%20Sales%20Intelligence.pbix" target="_blank" rel="noopener">PBIX</a>
+          <a class="badge badge--report" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/blob/main/docs/case-study.md" target="_blank" rel="noopener">Report</a>
         </div>
 
         <div class="actions">
@@ -155,12 +173,12 @@
           <img src="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/quickwins_1280x720.png" alt="Quick Wins">
         </div>
 
-        <!-- Badges row (PDF, PBIX, Demos) -->
-        <div class="chips">
-          <a class="chip" href="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/HR-Attrition-Report.pdf" target="_blank" rel="noopener">PDF</a>
-          <a class="chip" href="https://github.com/diegoporto10/hr-analytics-attrition/raw/main/HR-Attrition-Overview.pbix" target="_blank" rel="noopener">PBIX</a>
-          <a class="chip" href="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/overview_demo.gif" target="_blank" rel="noopener">Demo GIF</a>
-          <a class="chip" href="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/quickwins_demo.gif" target="_blank" rel="noopener">Demo GIF</a>
+        <!-- Tiny badges (PDF, PBIX, 2 GIFs) -->
+        <div class="badges">
+          <a class="badge badge--pdf" href="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/HR-Attrition-Report.pdf" target="_blank" rel="noopener">PDF</a>
+          <a class="badge badge--pbix" href="https://github.com/diegoporto10/hr-analytics-attrition/raw/main/HR-Attrition-Overview.pbix" target="_blank" rel="noopener">PBIX</a>
+          <a class="badge badge--gif" href="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/overview_demo.gif" target="_blank" rel="noopener">Demo GIF</a>
+          <a class="badge badge--gif" href="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/quickwins_demo.gif" target="_blank" rel="noopener">Demo GIF</a>
         </div>
 
         <div class="actions">
@@ -187,9 +205,9 @@
           <div class="kpi">Quickstart in README</div>
         </div>
 
-        <div class="chips">
-          <a class="chip" href="https://github.com/diegoporto10/data-cleaning-python" target="_blank" rel="noopener">Repo</a>
-          <a class="chip" href="https://github.com/diegoporto10/data-cleaning-python#quickstart-windowspowershell" target="_blank" rel="noopener">Quickstart</a>
+        <div class="badges">
+          <a class="badge badge--download" href="https://github.com/diegoporto10/data-cleaning-python#quickstart-windowspowershell" target="_blank" rel="noopener">Quickstart</a>
+          <a class="badge" href="https://github.com/diegoporto10/data-cleaning-python" target="_blank" rel="noopener">Repo</a>
         </div>
 
         <div class="actions">
@@ -221,4 +239,3 @@
   </script>
 </body>
 </html>
-
