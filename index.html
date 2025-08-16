@@ -12,8 +12,7 @@
   <meta property="og:description" content="Power BI • SQL • Python. Executive dashboards and concise storytelling.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://diegoporto10.github.io/">
-  <!-- HR overview hero for link previews -->
-  <meta property="og:image" content="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/overview_1280x720.png">
+  <meta property="og:image" content="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/refs/heads/main/images/executive-overview.png">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Fonts -->
@@ -23,8 +22,8 @@
 
   <style>
     :root{
-      --bg:#0b0e12; --card:#12161d; --muted:#9aa4b2; --text:#e6edf3; --accent:#79c0ff; --chip:#1a2430; --shadow:0 10px 30px rgba(0,0,0,.35);
-      --stroke:#1f2937; --stroke-2:#263244;
+      --bg:#0b0e12; --card:#12161d; --muted:#9aa4b2; --text:#e6edf3; --accent:#79c0ff; --chip:#1a2430;
+      --stroke:#1f2937; --stroke-2:#263244; --shadow:0 10px 30px rgba(0,0,0,.35);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial;background:var(--bg);color:var(--text)}
@@ -49,6 +48,9 @@
     .tag{background:var(--chip);border:1px solid #223045;color:var(--muted);padding:6px 10px;border-radius:999px;font-size:12px}
     .kpis{display:flex;gap:12px;flex-wrap:wrap}
     .kpi{background:#0f141b;border:1px dashed #273446;padding:10px 12px;border-radius:12px;font-size:12px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .chip{background:#0f141b;border:1px solid #273446;padding:6px 10px;border-radius:999px;font-size:12px;color:var(--text)}
+    .chip:hover{filter:brightness(1.05);transform:translateY(-1px);transition:.15s ease}
     .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
     .section-title{display:flex;align-items:center;justify-content:space-between;margin:24px 0 12px}
     .section-title h2{margin:0;font-size:18px}
@@ -57,28 +59,9 @@
     .hero{background:linear-gradient(180deg,rgba(31,111,235,.15),rgba(0,0,0,0));border:1px solid var(--stroke);border-radius:16px;padding:20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
     .hero h2{margin:0 0 6px}
     .hero p{margin:0;color:var(--muted)}
-
-    /* Thumbnails */
     .thumbs{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
     .thumbs img{width:220px;height:120px;object-fit:cover;border-radius:10px;border:1px solid var(--stroke-2);display:block}
-
-    /* Badges */
-    .badges{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
-    .badges img{height:22px;border-radius:6px;border:1px solid var(--stroke-2)}
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Diego Porto",
-    "jobTitle":"Data Analyst",
-    "url":"https://diegoporto10.github.io/",
-    "sameAs":[],
-    "knowsAbout":["Power BI","SQL","Python","Excel","Data Storytelling"],
-    "worksFor":{"@type":"Organization","name":"Freelance"}
-  }
-  </script>
 </head>
 <body>
   <div class="wrap">
@@ -100,18 +83,18 @@
     <div class="hero">
       <div style="flex:1 1 360px;min-width:260px">
         <h2>Portfolio Highlights</h2>
-        <p>Four real-world projects with live dashboards and concise business storytelling. Links below: Dashboard · GitHub Repo · Case Study.</p>
+        <p>Real projects with live dashboards, repos, and a short case study. Concise storytelling; pragmatic outcomes.</p>
       </div>
       <div class="pill">Available for remote roles · João Pessoa / BR (UTC−03)</div>
     </div>
 
     <div class="section-title" id="projects">
       <h2>Projects</h2>
-      <div class="note">Real projects with links to the dashboard, repo and a short case study.</div>
+      <div class="note">Links to Dashboard / Repo / Case Study or Quickstart.</div>
     </div>
 
     <section class="grid" id="project-list">
-      <!-- PROJECT 1 -->
+      <!-- PROJECT: Retail Sales Intelligence — Power BI -->
       <article class="card">
         <h3>Retail Sales Intelligence — Power BI</h3>
         <div class="meta">
@@ -126,7 +109,6 @@
           <div class="kpi">+2.1 pp margin</div>
         </div>
 
-        <!-- Clickable thumbnails -->
         <div class="thumbs">
           <a href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/blob/main/docs/case-study.md" target="_blank" rel="noopener">
             <img src="https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/refs/heads/main/images/executive-overview.png" alt="Executive overview">
@@ -139,6 +121,13 @@
           </a>
         </div>
 
+        <!-- Badges row (PDF + PBIX + Case study) -->
+        <div class="chips">
+          <a class="chip" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/raw/main/docs/Retail-Executive-Overview.pdf" target="_blank" rel="noopener">PDF</a>
+          <a class="chip" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/raw/main/Retail%20Sales%20Intelligence.pbix" target="_blank" rel="noopener">PBIX</a>
+          <a class="chip" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/blob/main/docs/case-study.md" target="_blank" rel="noopener">Report</a>
+        </div>
+
         <div class="actions">
           <a class="btn" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi/raw/main/Retail%20Sales%20Intelligence.pbix" target="_blank" rel="noopener">View Dashboard</a>
           <a class="btn" href="https://github.com/diegoporto10/retail-sales-intelligence-pbi" target="_blank" rel="noopener">GitHub Repo</a>
@@ -146,7 +135,7 @@
         </div>
       </article>
 
-      <!-- PROJECT 2 -->
+      <!-- PROJECT: HR Analytics — Attrition & Tenure -->
       <article class="card">
         <h3>HR Analytics — Attrition & Tenure</h3>
         <div class="meta">
@@ -161,91 +150,51 @@
           <div class="kpi">5 quick wins</div>
         </div>
 
-        <!-- HR thumbnails -->
         <div class="thumbs">
-          <a href="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/overview_1280x720.png" target="_blank" rel="noopener">
-            <img src="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/overview_1280x720.png?v=2"
-                 alt="Attrition Overview" loading="lazy">
-          </a>
-          <a href="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/quickwins_1280x720.png" target="_blank" rel="noopener">
-            <img src="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/quickwins_1280x720.png?v=2"
-                 alt="Quick Wins (Drivers & Actions)" loading="lazy">
-          </a>
+          <img src="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/overview_1280x720.png" alt="Attrition Overview">
+          <img src="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/quickwins_1280x720.png" alt="Quick Wins">
         </div>
 
-        <!-- HR badges -->
-        <div class="badges">
-          <a href="https://github.com/diegoporto10/hr-analytics-attrition/blob/main/assets/HR-Attrition-Report.pdf?raw=1" target="_blank" rel="noopener">
-            <img alt="PDF Report" src="https://img.shields.io/badge/PDF-Report-EC1C24?logo=adobeacrobatreader&logoColor=white">
-          </a>
-          <a href="https://github.com/diegoporto10/hr-analytics-attrition/blob/main/assets/HR-Attrition-Overview.pbix?raw=1" target="_blank" rel="noopener">
-            <img alt="PBIX Download" src="https://img.shields.io/badge/PBIX-Download-FFB900?logo=powerbi&logoColor=black">
-          </a>
-          <a href="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/overview_demo.gif" target="_blank" rel="noopener">
-            <img alt="Demo GIF (Overview)" src="https://img.shields.io/badge/Demo-GIF-0b72b9">
-          </a>
-          <a href="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/quickwins_demo.gif" target="_blank" rel="noopener">
-            <img alt="Demo GIF (Quick Wins)" src="https://img.shields.io/badge/Demo-GIF-1261a0">
-          </a>
+        <!-- Badges row (PDF, PBIX, Demos) -->
+        <div class="chips">
+          <a class="chip" href="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/HR-Attrition-Report.pdf" target="_blank" rel="noopener">PDF</a>
+          <a class="chip" href="https://github.com/diegoporto10/hr-analytics-attrition/raw/main/HR-Attrition-Overview.pbix" target="_blank" rel="noopener">PBIX</a>
+          <a class="chip" href="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/overview_demo.gif" target="_blank" rel="noopener">Demo GIF</a>
+          <a class="chip" href="https://raw.githubusercontent.com/diegoporto10/hr-analytics-attrition/main/assets/quickwins_demo.gif" target="_blank" rel="noopener">Demo GIF</a>
         </div>
 
         <div class="actions">
-          <!-- View Dashboard (full 2-page PDF) -->
-          <a class="btn"
-             href="https://github.com/diegoporto10/hr-analytics-attrition/blob/main/assets/HR-Attrition-Report.pdf?raw=1"
-             target="_blank" rel="noopener">View Dashboard</a>
-
-          <!-- Repo -->
-          <a class="btn"
-             href="https://github.com/diegoporto10/hr-analytics-attrition"
-             target="_blank" rel="noopener">GitHub Repo</a>
-
-          <!-- Case Study (dedicated page) -->
-          <a class="btn"
-             href="https://github.com/diegoporto10/hr-analytics-attrition/blob/main/docs/case-study.md"
-             target="_blank" rel="noopener">Case Study</a>
+          <a class="btn" href="https://github.com/diegoporto10/hr-analytics-attrition/raw/main/HR-Attrition-Overview.pbix" target="_blank" rel="noopener">View Dashboard</a>
+          <a class="btn" href="https://github.com/diegoporto10/hr-analytics-attrition" target="_blank" rel="noopener">GitHub Repo</a>
+          <a class="btn" href="https://github.com/diegoporto10/hr-analytics-attrition/blob/main/README.md#assets--notes" target="_blank" rel="noopener">Case Study</a>
         </div>
       </article>
 
-      <!-- PROJECT 3 -->
+      <!-- PROJECT: Python Data Cleaning -->
       <article class="card">
-        <h3>Brazil Tourism — CPLP & Nomads</h3>
+        <h3>Python Data Cleaning — Pandas Pipeline</h3>
         <div class="meta">
-          <span class="tag">Domain: Public Data</span>
-          <span class="tag">Stack: Power BI · Python · OWID</span>
-          <span class="tag">Dataset: Our World in Data + GovBR</span>
+          <span class="tag">Domain: Utility</span>
+          <span class="tag">Stack: Python · Pandas</span>
+          <span class="tag">Dataset: Sample CSV</span>
         </div>
-        <p>Combined international arrivals and macro indicators to highlight growth pockets (CPLP countries, digital nomads). Provided policy suggestions for visa funnels and local services.</p>
-        <div class="kpis">
-          <div class="kpi">+X% arrivals YoY</div>
-          <div class="kpi">12-month forecast</div>
-          <div class="kpi">3 policy levers</div>
-        </div>
-        <div class="actions">
-          <a class="btn" href="#" target="_blank" rel="noopener">View Dashboard</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">GitHub Repo</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">Case Study</a>
-        </div>
-      </article>
+        <p>Reusable Pandas pipeline for fast data cleaning: rename/trim columns, fix types, dedupe rows,
+           coerce numeric types, and derive simple features (like age/tenure bands). Includes a tiny CLI.</p>
 
-      <!-- PROJECT 4 -->
-      <article class="card">
-        <h3>Support Desk — SLA & Backlog</h3>
-        <div class="meta">
-          <span class="tag">Domain: Operations</span>
-          <span class="tag">Stack: Power BI · SQL · Excel</span>
-          <span class="tag">Dataset: Simulated + Realistic</span>
-        </div>
-        <p>Ticket triage and SLA dashboard with aging buckets, first-response-time and resolution SLAs. Improved on-time rate through queue rebalancing and auto-escalation rules.</p>
         <div class="kpis">
-          <div class="kpi">SLA on-time +12 pp</div>
-          <div class="kpi">Backlog −23%</div>
-          <div class="kpi">FRT −18%</div>
+          <div class="kpi">1-file CLI</div>
+          <div class="kpi">Pandas + argparse</div>
+          <div class="kpi">Quickstart in README</div>
         </div>
+
+        <div class="chips">
+          <a class="chip" href="https://github.com/diegoporto10/data-cleaning-python" target="_blank" rel="noopener">Repo</a>
+          <a class="chip" href="https://github.com/diegoporto10/data-cleaning-python#quickstart-windowspowershell" target="_blank" rel="noopener">Quickstart</a>
+        </div>
+
         <div class="actions">
-          <a class="btn" href="#" target="_blank" rel="noopener">View Dashboard</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">GitHub Repo</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">Case Study</a>
+          <a class="btn" href="https://github.com/diegoporto10/data-cleaning-python" target="_blank" rel="noopener">GitHub Repo</a>
+          <a class="btn" href="https://github.com/diegoporto10/data-cleaning-python#quickstart-windowspowershell" target="_blank" rel="noopener">Open Quickstart</a>
         </div>
       </article>
     </section>
@@ -272,3 +221,4 @@
   </script>
 </body>
 </html>
+
