@@ -14,30 +14,23 @@
   <meta property="og:image" content="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story3_oportunidades_investimento.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- JSON-LD (Organization / Service) -->
+  <!-- JSON-LD (Business) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Diego Porto — Real Estate Analytics",
     "url": "https://diegoporto10.github.io/",
-    "logo": "https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/refs/heads/main/images/executive-overview.png",
     "image": "https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story3_oportunidades_investimento.png",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "João Pessoa",
-      "addressRegion": "PB",
-      "addressCountry": "BR"
-    },
+    "address": {"@type":"PostalAddress","addressLocality":"João Pessoa","addressRegion":"PB","addressCountry":"BR"},
+    "email": "mailto:diego.porto10@gmail.com",
+    "telephone": "+55 83 99999-9999",
     "description": "Análises imobiliárias e oportunidades em João Pessoa e capitais brasileiras: preço por m², valorização, custo de vida e Airbnb STR yield.",
-    "sameAs": [
-      "https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes",
-      "https://github.com/diegoporto10"
-    ]
+    "sameAs": ["https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes","https://github.com/diegoporto10"]
   }
   </script>
 
-  <!-- Google Analytics -->
+  <!-- GA (optional) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB4NSH0Y5E"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -71,9 +64,12 @@
     .btn{padding:9px 12px;border-radius:10px;border:1px solid var(--stroke);background:#0f141b;color:var(--text);display:inline-flex;gap:8px;align-items:center}
     .btn.primary{background:linear-gradient(135deg,#1f6feb,#5bba6f);border:none}
     .lang{padding:8px;border:1px solid var(--stroke);background:#0f141b;border-radius:10px;color:var(--muted);cursor:pointer}
+
+    .contactbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .chip{display:inline-flex;background:var(--chip);border:1px solid var(--stroke);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:12px}
+
     .hero{display:grid;grid-template-columns:1fr;gap:16px;background:linear-gradient(180deg,rgba(31,111,235,.12),rgba(0,0,0,0));border:1px solid var(--stroke);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
     .hero h2{margin:0}
-    .chip{display:inline-flex;background:var(--chip);border:1px solid var(--stroke);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:12px}
     .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
     @media(min-width:860px){.grid{grid-template-columns:repeat(3,1fr)}}
     .card{background:var(--card);border:1px solid var(--stroke);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
@@ -83,6 +79,7 @@
     .muted{color:var(--muted);font-size:13px}
     .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
     .kpi{background:#0f141b;border:1px dashed #233044;padding:8px 10px;border-radius:10px;font-size:12px}
+
     .section{margin-top:26px}
     .section h2{margin:0 0 10px}
     .two{display:grid;grid-template-columns:1fr;gap:16px}
@@ -96,11 +93,21 @@
   <div class="wrap">
     <!-- Header -->
     <header>
-      <div class="brand">
-        <div class="avatar">DP</div>
-        <div class="title">
-          <h1>João Pessoa Real Estate — by Diego Porto</h1>
-          <p id="tagline">Analytics para viver e investir melhor</p>
+      <div>
+        <div class="brand">
+          <div class="avatar">DP</div>
+          <div class="title">
+            <h1 id="site-title">João Pessoa Real Estate — by Diego Porto</h1>
+            <p id="tagline">Analytics para viver e investir melhor</p>
+          </div>
+        </div>
+        <div class="contactbar">
+          <span class="chip" id="chip-name">Diego Porto</span>
+          <span class="chip" id="chip-creci">CRECI-PB 000000</span>
+          <a class="chip" id="chip-phone" href="#" target="_blank" rel="noopener">📞 +55 83 00000-0000</a>
+          <a class="chip" id="chip-whats" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a class="chip" href="mailto:diego.porto10@gmail.com">✉️ diego.porto10@gmail.com</a>
+          <a class="chip" id="chip-form" href="#" target="_blank" rel="noopener">📝 Formulário</a>
         </div>
       </div>
       <div class="actions">
@@ -132,12 +139,14 @@
     <!-- Tableau Stories -->
     <section class="section" id="stories">
       <h2 id="stories-title">Stories interativos</h2>
-      <p class="muted" id="stories-sub">Explore os três painéis e compare as capitais — destaque para João Pessoa.</p>
+      <p class="muted" id="stories-sub">Clique nas miniaturas para <strong>baixar as imagens</strong> ou abra os Stories no Tableau.</p>
 
       <div class="grid">
         <!-- Story 1 -->
         <article class="card">
-          <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story1_qualidade_de_vida.png" alt="Quality of Life">
+          <a href="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story1_qualidade_de_vida.png" download>
+            <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story1_qualidade_de_vida.png" alt="Quality of Life">
+          </a>
           <div class="pad">
             <h3 id="s1-title">Qualidade de Vida (2025)</h3>
             <p class="muted" id="s1-desc">Área verde per capita, tempo de deslocamento e índice Numbeo.</p>
@@ -146,16 +155,16 @@
               <div class="kpi">Rio & SP com piores tempos</div>
             </div>
             <p>
-              <a class="btn" target="_blank" rel="noopener" href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes">
-                Tableau Public
-              </a>
+              <a class="btn" target="_blank" rel="noopener" href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes">Tableau Public</a>
             </p>
           </div>
         </article>
 
         <!-- Story 2 -->
         <article class="card">
-          <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story2_custo_vida_mercado.png" alt="Cost of living and market">
+          <a href="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story2_custo_vida_mercado.png" download>
+            <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story2_custo_vida_mercado.png" alt="Cost of living and market">
+          </a>
           <div class="pad">
             <h3 id="s2-title">Custo de Vida & Mercado (2025)</h3>
             <p class="muted" id="s2-desc">Aluguel 2Q, preço por m² em área nobre e gasto mensal por pessoa.</p>
@@ -164,34 +173,32 @@
               <div class="kpi">SP & RJ muito acima</div>
             </div>
             <p>
-              <a class="btn" target="_blank" rel="noopener" href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes">
-                Tableau Public
-              </a>
+              <a class="btn" target="_blank" rel="noopener" href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes">Tableau Public</a>
             </p>
           </div>
         </article>
 
         <!-- Story 3 -->
         <article class="card">
-          <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story3_oportunidades_investimento.png" alt="Investment opportunities">
+          <a href="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story3_oportunidades_investimento.png" download>
+            <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story3_oportunidades_investimento.png" alt="Investment opportunities">
+          </a>
           <div class="pad">
             <h3 id="s3-title">Oportunidades (2025)</h3>
             <p class="muted" id="s3-desc">Valorização anual (FipeZAP), preço por m² e Airbnb STR Yield.</p>
             <div class="kpis">
               <div class="kpi">JP: 18,25% + 13% STR</div>
-              <div class="kpi">BH/POA < 6% STR</div>
+              <div class="kpi">BH/POA &lt; 6% STR</div>
             </div>
             <p>
-              <a class="btn" target="_blank" rel="noopener" href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes">
-                Tableau Public
-              </a>
+              <a class="btn" target="_blank" rel="noopener" href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes">Tableau Public</a>
             </p>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Why João Pessoa -->
+    <!-- Why João Pessoa + Contact -->
     <section class="section two">
       <div class="card">
         <div class="pad">
@@ -214,14 +221,15 @@
         <div class="pad">
           <h2 id="contact-title">Fale comigo</h2>
           <p class="muted" id="contact-sub">Quer um estudo sob medida? Envie uma mensagem.</p>
-          <form action="https://formspree.io/f/your-id-here" method="POST">
+          <form id="lead-form" action="#" method="POST">
             <input type="text" name="name" placeholder="Seu nome" required />
-            <input type="email" name="email" placeholder="Seu e‑mail" required />
+            <input type="email" name="email" placeholder="Seu e-mail" required />
             <textarea name="message" placeholder="Conte o que você busca (investir, morar, curto prazo…)" rows="4"></textarea>
             <div class="actions">
               <button class="btn primary" type="submit" id="btn-send">Enviar</button>
-              <a class="btn" id="btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/5599999999999?text=Olá%20Diego,%20quero%20saber%20mais%20sobre%20João%20Pessoa%20Real%20Estate.">WhatsApp</a>
-              <a class="btn" href="mailto:diego.porto10@gmail.com">E‑mail</a>
+              <a class="btn" id="btn-whatsapp" target="_blank" rel="noopener" href="#">WhatsApp</a>
+              <a class="btn" id="btn-email" href="mailto:diego.porto10@gmail.com">E-mail</a>
+              <a class="btn" id="btn-form" href="#" target="_blank" rel="noopener">Formulário</a>
             </div>
           </form>
         </div>
@@ -229,55 +237,82 @@
     </section>
 
     <footer>
-      © <span id="y"></span> Diego Porto — Real Estate Analytics · João Pessoa / BR (UTC−03)
+      © <span id="y"></span> <span id="f-name">Diego Porto</span> — <span id="f-tag">Real Estate Analytics</span> · <span id="f-creci">CRECI-PB 000000</span>
     </footer>
   </div>
 
   <script>
+    // ========= EDIT YOUR CONTACT INFO HERE =========
+    const CONTACT = {
+      name: 'Diego Porto',
+      creci: 'CRECI-PB 000000',                // <-- put your real CRECI
+      phone: '+55 83 00000-0000',             // clickable phone
+      whatsapp: '+558300000000',              // E.164, no spaces (for wa.me)
+      email: 'diego.porto10@gmail.com',
+      form: 'https://formspree.io/f/your-id'  // or Google Forms link
+    };
+    // ===============================================
+
     // year
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // simple i18n (PT/EN)
+    // fill contact bar & footer
+    const $ = id => document.getElementById(id);
+    $('chip-name').textContent = CONTACT.name;
+    $('chip-creci').textContent = CONTACT.creci;
+    $('chip-phone').textContent = `📞 ${CONTACT.phone}`;
+    $('chip-phone').href = `tel:${CONTACT.phone.replace(/[^\d+]/g,'')}`;
+    $('chip-whats').href = `https://wa.me/${CONTACT.whatsapp.replace(/[^\d]/g,'')}?text=Ol%C3%A1%20Diego,%20quero%20saber%20mais%20sobre%20Jo%C3%A3o%20Pessoa%20Real%20Estate.`;
+    $('chip-form').href = CONTACT.form;
+    $('btn-whatsapp').href = $('chip-whats').href;
+    $('btn-form').href = CONTACT.form;
+    $('f-name').textContent = CONTACT.name;
+    $('f-creci').textContent = CONTACT.creci;
+
+    // Simple i18n PT/EN
     const T = {
       pt: {
+        siteTitle:"João Pessoa Real Estate — by Diego Porto",
         tagline:"Analytics para viver e investir melhor",
         btnStories:"Ver Stories", btnContact:"Fale comigo",
         heroTitle:"Dados claros para decidir onde morar e investir",
         heroDesc:"Preço por m², custo de vida, tempo de deslocamento, valorização e Airbnb STR yield — com foco em João Pessoa e comparação com capitais brasileiras.",
         chipCta:"Atendo investidores, relocação e nômades digitais",
         storiesTitle:"Stories interativos",
-        storiesSub:"Explore os três painéis e compare as capitais — destaque para João Pessoa.",
+        storiesSub:"Clique nas miniaturas para baixar as imagens ou abra os Stories no Tableau.",
         s1Title:"Qualidade de Vida (2025)", s1Desc:"Área verde per capita, tempo de deslocamento e índice Numbeo.",
         s2Title:"Custo de Vida & Mercado (2025)", s2Desc:"Aluguel 2Q, preço por m² em área nobre e gasto mensal por pessoa.",
         s3Title:"Oportunidades (2025)", s3Desc:"Valorização anual (FipeZAP), preço por m² e Airbnb STR Yield.",
         whyTitle:"Por que João Pessoa?",
         whyDesc:"Combinação rara de preço de entrada mais baixo, boa valorização e melhor qualidade de vida: mais áreas verdes, menor tempo de deslocamento e custo mensal inferior às metrópoles. Ideal para morar, relocação familiar, nômades digitais e renda de aluguel de temporada.",
         contactTitle:"Fale comigo", contactSub:"Quer um estudo sob medida? Envie uma mensagem.",
-        btnSend:"Enviar"
+        btnSend:"Enviar",
+        fTag:"Real Estate Analytics"
       },
       en: {
+        siteTitle:"João Pessoa Real Estate — by Diego Porto",
         tagline:"Analytics to live and invest better",
         btnStories:"See Stories", btnContact:"Contact",
         heroTitle:"Clear data to decide where to live & invest",
         heroDesc:"Price per sqm, cost of living, commute time, appreciation and Airbnb STR yield — focused on João Pessoa with comparisons across Brazilian capitals.",
         chipCta:"For investors, relocations and digital nomads",
         storiesTitle:"Interactive stories",
-        storiesSub:"Explore the three dashboards and compare capitals — João Pessoa stands out.",
+        storiesSub:"Click thumbnails to download the images or open the stories on Tableau.",
         s1Title:"Quality of Life (2025)", s1Desc:"Green area per capita, commuting time and Numbeo index.",
         s2Title:"Cost of Living & Market (2025)", s2Desc:"2BR rent, prime-zone price per m² and monthly cost per person.",
         s3Title:"Opportunities (2025)", s3Desc:"Annual appreciation (FipeZAP), price per m² and Airbnb STR yield.",
         whyTitle:"Why João Pessoa?",
-        whyDesc:"A rare mix of lower entry prices, solid appreciation and better quality of life: more green areas, shorter commute times and lower monthly costs than major metros. Great to live, relocate, work remotely and capture short‑term rental income.",
+        whyDesc:"A rare mix of lower entry prices, solid appreciation and better quality of life: more green areas, shorter commute times and lower monthly costs than major metros. Great to live, relocate, work remotely and capture short-term rental income.",
         contactTitle:"Contact", contactSub:"Need a tailored study? Send a message.",
-        btnSend:"Send"
+        btnSend:"Send",
+        fTag:"Real Estate Analytics"
       }
     };
 
     let lang = 'pt';
-    const $ = id => document.getElementById(id);
-
     function applyLang(){
       const t = T[lang];
+      $('site-title').textContent = t.siteTitle;
       $('tagline').textContent = t.tagline;
       $('btn-stories').textContent = t.btnStories;
       $('btn-contact').textContent = t.btnContact;
@@ -292,15 +327,21 @@
       $('why-title').textContent = t.whyTitle; $('why-desc').textContent = t.whyDesc;
       $('contact-title').textContent = t.contactTitle; $('contact-sub').textContent = t.contactSub;
       $('btn-send').textContent = t.btnSend;
+      $('f-tag').textContent = t.fTag;
       document.documentElement.lang = (lang === 'pt' ? 'pt-BR' : 'en');
+      $('toggle-lang').textContent = (lang === 'pt' ? 'PT / EN' : 'EN / PT');
     }
-
-    $('toggle-lang').addEventListener('click', () => { lang = (lang === 'pt' ? 'en' : 'pt'); applyLang(); });
+    document.getElementById('toggle-lang').addEventListener('click', () => {
+      lang = (lang === 'pt' ? 'en' : 'pt'); applyLang();
+    });
     applyLang();
-  </script>
-</body>
-</html>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+    // Lightweight form handler → redirect to your external form (Google Forms or Formspree)
+    const form = document.getElementById('lead-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      window.open(CONTACT.form, '_blank');
+    });
+  </script>
 </body>
 </html>
