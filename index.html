@@ -1,59 +1,188 @@
-<section class="grid" id="project-list">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- PROJECT: João Pessoa Real Estate — Power BI -->
-  <article class="card">
-    <h3>João Pessoa Real Estate — Market Insights (Power BI)</h3>
-    <div class="meta">
-      <span class="tag">Domain: Real Estate</span>
-      <span class="tag">Stack: Power BI · SQL</span>
-      <span class="tag">Dataset: Local Listings & Indexes</span>
+  <title>Diego Porto — Real Estate Analytics</title>
+  <meta name="description" content="Real estate analytics for João Pessoa and Brazilian capitals. Power BI & Tableau dashboards, returns, Airbnb STR yields, and quality of life insights." />
+
+  <!-- Social -->
+  <meta property="og:title" content="Diego Porto — Real Estate Analytics">
+  <meta property="og:description" content="Power BI & Tableau dashboards: returns, STR yields, quality of life. João Pessoa highlighted.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://diegoporto10.github.io/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/valorizacao.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0e12; --card:#12161d; --muted:#9aa4b2; --text:#e6edf3; --accent:#79c0ff; --chip:#1a2430;
+      --stroke:#1f2937; --stroke-2:#263244; --shadow:0 10px 28px rgba(0,0,0,.35);
+      --pdf:#ef4444; --pbix:#3b82f6; --gif:#10b981; --report:#a78bfa; --download:#f59e0b;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial;background:var(--bg);color:var(--text);line-height:1.5}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{opacity:.92}
+    .wrap{max-width:1080px;margin:0 auto;padding:32px 20px}
+    header{display:flex;gap:20px;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .avatar{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#2b90ff,#6a5cff);display:grid;place-items:center;font-weight:800}
+    .title h1{font-size:22px;margin:0}
+    .title p{margin:2px 0 0;color:var(--muted);font-size:14px}
+    .cta{display:flex;flex-wrap:wrap;gap:10px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--stroke-2);background:#0f141b;color:var(--text);box-shadow:var(--shadow);cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg,#1f6feb,#7551ff);border:none}
+    .btn:hover{transform:translateY(-1px)}
+    .hero{background:linear-gradient(180deg,rgba(31,111,235,.12),rgba(0,0,0,0));border:1px solid var(--stroke);border-radius:16px;padding:20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:18px}
+    .hero h2{margin:0 0 6px}
+    .hero p{margin:0;color:var(--muted)}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:#0f141b;color:var(--muted);border:1px solid var(--stroke);padding:8px 12px;border-radius:999px;font-size:12px}
+
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin:24px 0 12px}
+    .section-title h2{margin:0;font-size:18px}
+    .note{color:var(--muted);font-size:13px}
+
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{grid-column:span 12;background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+    @media(min-width:900px){.card{grid-column:span 6}}
+    .card h3{margin:6px 0 8px}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 12px}
+    .tag{background:var(--chip);border:1px solid #223045;color:var(--muted);padding:6px 10px;border-radius:999px;font-size:12px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+    .thumbs{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .thumbs a{display:block}
+    .thumbs img{width:320px;max-width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid var(--stroke-2);display:block}
+
+    /* badges */
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .badge{
+      display:inline-flex;align-items:center;justify-content:center;height:24px;padding:0 10px;border-radius:999px;font-size:12px;
+      font-weight:600;letter-spacing:.2px;text-transform:uppercase;border:1px solid rgba(255,255,255,.1);background:#0f141b;color:var(--text)
+    }
+    .badge--pdf{background:color-mix(in lab, var(--pdf) 35%, #0b0e12); border-color: color-mix(in lab, var(--pdf) 60%, #0b0e12)}
+    .badge--pbix{background:color-mix(in lab, var(--pbix) 30%, #0b0e12); border-color: color-mix(in lab, var(--pbix) 60%, #0b0e12)}
+    .badge--download{background:color-mix(in lab, var(--download) 30%, #0b0e12); border-color: color-mix(in lab, var(--download) 60%, #0b0e12); color:#160e03}
+    footer{margin-top:32px;color:var(--muted);font-size:13px;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- header -->
+    <header>
+      <div class="brand">
+        <div class="avatar">DP</div>
+        <div class="title">
+          <h1>Diego Porto — Real Estate Analytics</h1>
+          <p>João Pessoa & Brazilian capitals · Power BI · Tableau</p>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn primary" href="mailto:diego.porto10@gmail.com">Contact</a>
+      </div>
+    </header>
+
+    <!-- hero -->
+    <div class="hero">
+      <div style="flex:1 1 360px;min-width:260px">
+        <h2>Portfolio Highlights</h2>
+        <p>Live dashboards for investors, relocations and market studies: prices, appreciation, STR yield and quality of life. João Pessoa emerges as a top choice in 2025.</p>
+      </div>
+      <div class="pill">Remote · João Pessoa / Brazil (UTC−03)</div>
     </div>
-    <p>Priority view for investors and relocations: <strong>neighborhood quality index</strong>, <strong>appreciation map</strong>, and <strong>risk-return matrix</strong>. Clean model and concise DAX KPIs.</p>
 
-    <div class="thumbs">
-      <img src="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/qualidade-de-vida.png" alt="Quality of Life by Neighborhood (Power BI)">
-      <img src="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/valorizacao.png" alt="Appreciation Map (Power BI)">
-      <img src="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/risco-vs-retorno.png" alt="Risk vs Return (Power BI)">
+    <div class="section-title" id="projects">
+      <h2>Projects</h2>
+      <div class="note">Click thumbnails to <strong>download</strong> the images. Buttons open PBIX/PDF/Tableau/Repo.</div>
     </div>
 
-    <div class="badges">
-      <a class="badge badge--pbix" href="https://github.com/diegoporto10/joao-pessoa-real-estate/raw/main/Análises%20Imobiliárias.pbix" target="_blank" rel="noopener">PBIX</a>
-      <a class="badge badge--pdf" href="https://github.com/diegoporto10/joao-pessoa-real-estate/raw/main/quality-of-life.pdf" target="_blank" rel="noopener">PDF</a>
-      <a class="badge" href="https://github.com/diegoporto10/joao-pessoa-real-estate" target="_blank" rel="noopener">Repo</a>
-    </div>
+    <section class="grid">
 
-    <div class="actions">
-      <a class="btn" href="https://github.com/diegoporto10/joao-pessoa-real-estate/raw/main/Análises%20Imobiliárias.pbix" target="_blank" rel="noopener">Download PBIX</a>
-      <a class="btn" href="https://github.com/diegoporto10/joao-pessoa-real-estate/raw/main/quality-of-life.pdf" target="_blank" rel="noopener">PDF Report</a>
-      <a class="btn" href="https://github.com/diegoporto10/joao-pessoa-real-estate" target="_blank" rel="noopener">GitHub Repo</a>
-    </div>
-  </article>
+      <!-- POWER BI -->
+      <article class="card">
+        <h3>João Pessoa Real Estate — Market Insights (Power BI)</h3>
+        <div class="meta">
+          <span class="tag">Real Estate</span>
+          <span class="tag">Power BI · SQL</span>
+          <span class="tag">Local Listings & Indexes</span>
+        </div>
+        <p>Priority view for investors & relocations: <strong>neighborhood quality index</strong>, <strong>appreciation map</strong>, and <strong>risk–return matrix</strong>. Clean star-schema and concise DAX KPIs.</p>
 
-  <!-- PROJECT: João Pessoa Real Estate — Tableau -->
-  <article class="card">
-    <h3>João Pessoa Real Estate — Quality of Life & Investment (Tableau)</h3>
-    <div class="meta">
-      <span class="tag">Domain: Real Estate</span>
-      <span class="tag">Stack: Tableau</span>
-      <span class="tag">Dataset: FipeZap · Airbnb · Numbeo</span>
-    </div>
-    <p>Interactive Tableau dashboard comparing <strong>real estate returns</strong>, <strong>Airbnb yields</strong>, and <strong>quality of life</strong> across Brazilian capitals. João Pessoa stands out as the most attractive city to live and invest in 2025.</p>
+        <!-- thumbnails (click = download) -->
+        <div class="thumbs">
+          <a href="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/qualidade-de-vida.png" download>
+            <img src="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/qualidade-de-vida.png" alt="Quality of Life by Neighborhood (Power BI)">
+          </a>
+          <a href="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/valorizacao.png" download>
+            <img src="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/valorizacao.png" alt="Appreciation Map (Power BI)">
+          </a>
+          <a href="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/risco-vs-retorno.png" download>
+            <img src="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/risco-vs-retorno.png" alt="Risk vs Return (Power BI)">
+          </a>
+        </div>
 
-    <div class="thumbs">
-      <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story1_qualidade_de_vida.png" alt="Tableau - Quality of Life">
-      <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story2_custo_vida_mercado.png" alt="Tableau - Cost of Living & Market">
-      <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story3_oportunidades_investimento.png" alt="Tableau - Investment Opportunities">
-    </div>
+        <div class="badges">
+          <a class="badge badge--pbix" href="https://github.com/diegoporto10/joao-pessoa-real-estate/raw/main/An%C3%A1lises%20Imobili%C3%A1rias.pbix" target="_blank" rel="noopener">PBIX</a>
+          <a class="badge badge--pdf" href="https://github.com/diegoporto10/joao-pessoa-real-estate/raw/main/quality-of-life.pdf" target="_blank" rel="noopener">PDF</a>
+          <a class="badge" href="https://github.com/diegoporto10/joao-pessoa-real-estate" target="_blank" rel="noopener">Repo</a>
+        </div>
 
-    <div class="badges">
-      <a class="badge" href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes" target="_blank" rel="noopener">Live Tableau</a>
-      <a class="badge" href="https://github.com/diegoporto10/real-estate-joao-pessoa" target="_blank" rel="noopener">Repo</a>
-    </div>
+        <div class="actions">
+          <a class="btn" href="https://github.com/diegoporto10/joao-pessoa-real-estate/raw/main/An%C3%A1lises%20Imobili%C3%A1rias.pbix" target="_blank" rel="noopener">Download PBIX</a>
+          <a class="btn" href="https://github.com/diegoporto10/joao-pessoa-real-estate/raw/main/quality-of-life.pdf" target="_blank" rel="noopener">PDF Report</a>
+          <a class="btn" href="https://github.com/diegoporto10/joao-pessoa-real-estate" target="_blank" rel="noopener">GitHub Repo</a>
+        </div>
+      </article>
 
-    <div class="actions">
-      <a class="btn" href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes" target="_blank" rel="noopener">View Tableau Dashboard</a>
-      <a class="btn" href="https://github.com/diegoporto10/real-estate-joao-pessoa" target="_blank" rel="noopener">GitHub Repo</a>
-    </div>
-  </article>
+      <!-- TABLEAU -->
+      <article class="card">
+        <h3>João Pessoa Real Estate — Quality of Life & Investment (Tableau)</h3>
+        <div class="meta">
+          <span class="tag">Real Estate</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">FipeZAP · Airbnb · Numbeo</span>
+        </div>
+        <p>Interactive Tableau stories covering <strong>price per m²</strong>, <strong>annual appreciation</strong>, <strong>Airbnb STR yield</strong>, and <strong>quality of life</strong> across Brazilian capitals. João Pessoa leads on yield and livability.</p>
 
-</section>
+        <!-- thumbnails (click = download) -->
+        <div class="thumbs">
+          <a href="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story1_qualidade_de_vida.png" download>
+            <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story1_qualidade_de_vida.png" alt="Tableau Story — Quality of Life">
+          </a>
+          <a href="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story2_custo_vida_mercado.png" download>
+            <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story2_custo_vida_mercado.png" alt="Tableau Story — Cost of Living & Market">
+          </a>
+          <a href="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story3_oportunidades_investimento.png" download>
+            <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story3_oportunidades_investimento.png" alt="Tableau Story — Investment Opportunities">
+          </a>
+        </div>
+
+        <div class="badges">
+          <a class="badge" href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes" target="_blank" rel="noopener">Live Tableau</a>
+          <a class="badge" href="https://github.com/diegoporto10/real-estate-joao-pessoa" target="_blank" rel="noopener">Repo</a>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes" target="_blank" rel="noopener">Open Tableau Stories</a>
+          <a class="btn" href="https://github.com/diegoporto10/real-estate-joao-pessoa" target="_blank" rel="noopener">GitHub Repo</a>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      © <span id="y"></span> Diego Porto — Real Estate Analytics · Built for GitHub Pages.
+    </footer>
+  </div>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
