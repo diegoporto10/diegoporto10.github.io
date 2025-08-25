@@ -1,50 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>João Pessoa Real Estate — Insights & Oportunidades | Diego Porto (CRECI‑PB 10852)</title>
-  <meta name="description" content="Análises imobiliárias em João Pessoa e capitais brasileiras: custo de vida, preço por m², valorização e Airbnb STR yield. Tableau Stories e insights acionáveis. Site bilíngue (PT/EN)." />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>João Pessoa — Real Estate Insights 2025 | Diego Porto</title>
+  <meta name="description" content="Real-estate analytics focused on João Pessoa and Brazilian capitals. Tableau stories (2025) + a deep-dive Power BI analysis with PBIX and PDF."/>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="João Pessoa Real Estate — Insights & Oportunidades | Diego Porto (CRECI‑PB 10852)">
-  <meta property="og:description" content="Preço por m², valorização, custo de vida e Airbnb STR Yield — com foco em João Pessoa. Tableau Stories e decisões melhores. PT/EN.">
+  <meta property="og:title" content="João Pessoa — Real Estate Insights 2025 | Diego Porto">
+  <meta property="og:description" content="Tableau stories (2025) + Power BI deep-dive. Prices, appreciation, STR yield and quality of life.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://diegoporto10.github.io/">
   <meta property="og:image" content="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story3_oportunidades_investimento.png">
+  <meta property="og:url" content="https://diegoporto10.github.io/">
   <meta name="twitter:card" content="summary_large_image">
-
-  <!-- JSON-LD (Organization / Service) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Diego Porto — Real Estate Analytics (CRECI-PB 10852)",
-    "url": "https://diegoporto10.github.io/",
-    "logo": "https://raw.githubusercontent.com/diegoporto10/retail-sales-intelligence-pbi/refs/heads/main/images/executive-overview.png",
-    "image": "https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story3_oportunidades_investimento.png",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "João Pessoa",
-      "addressRegion": "PB",
-      "addressCountry": "BR"
-    },
-    "telephone": "+55 83 99340-7446",
-    "description": "Análises imobiliárias e oportunidades em João Pessoa e capitais brasileiras: preço por m², valorização, custo de vida e Airbnb STR yield.",
-    "sameAs": [
-      "https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes",
-      "https://github.com/diegoporto10"
-    ]
-  }
-  </script>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB4NSH0Y5E"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-QB4NSH0Y5E');
-  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,285 +22,273 @@
 
   <style>
     :root{
-      --bg:#0c0f14; --card:#121722; --text:#e7edf5; --muted:#a3afc0;
-      --stroke:#1e2633; --chip:#17202c; --accent:#67b8ff; --accent2:#89f8c2;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --bg:#0b0e12; --card:#12161d; --muted:#9aa4b2; --text:#e6edf3;
+      --accent:#79c0ff; --chip:#1a2430; --stroke:#1f2937; --stroke-2:#273446;
+      --shadow:0 10px 28px rgba(0,0,0,.35); --green:#10b981; --amber:#f59e0b;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{opacity:.9}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; background:var(--bg); color:var(--text)}
+    a{color:var(--accent);text-decoration:none} a:hover{opacity:.9}
     .wrap{max-width:1100px;margin:0 auto;padding:28px 18px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .avatar{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#1f6feb,#a855f7);display:grid;place-items:center;font-weight:800}
-    .title{display:flex;flex-direction:column}
-    .title h1{margin:0;font-size:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#1f6feb,#7551ff);font-weight:800}
+    .title h1{margin:0;font-size:22px}
     .title p{margin:2px 0 0;color:var(--muted);font-size:13px}
-    .actions{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{padding:9px 12px;border-radius:10px;border:1px solid var(--stroke);background:#0f141b;color:var(--text);display:inline-flex;gap:8px;align-items:center}
-    .btn.primary{background:linear-gradient(135deg,#1f6feb,#5bba6f);border:none}
-    .btn.small{padding:7px 10px;font-size:13px}
-    .lang{padding:8px;border:1px solid var(--stroke);background:#0f141b;border-radius:10px;color:var(--muted);cursor:pointer}
-    .hero{display:grid;grid-template-columns:1fr;gap:16px;background:linear-gradient(180deg,rgba(31,111,235,.12),rgba(0,0,0,0));border:1px solid var(--stroke);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
-    .hero h2{margin:0}
-    .chip{display:inline-flex;background:var(--chip);border:1px solid var(--stroke);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:12px}
-    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
-    @media(min-width:860px){.grid{grid-template-columns:repeat(3,1fr)}}
-    .card{background:var(--card);border:1px solid var(--stroke);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
-    .card img{display:block;width:100%;height:180px;object-fit:cover;border-bottom:1px solid var(--stroke)}
-    .card .pad{padding:14px}
-    .card h3{margin:0 0 6px}
-    .muted{color:var(--muted);font-size:13px}
-    .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .kpi{background:#0f141b;border:1px dashed #233044;padding:8px 10px;border-radius:10px;font-size:12px}
-    .section{margin-top:26px}
-    .section h2{margin:0 0 10px}
-    .two{display:grid;grid-template-columns:1fr;gap:16px}
-    @media(min-width:860px){.two{grid-template-columns:1.2fr .8fr}}
-    input, textarea{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--stroke);background:#0f141b;color:var(--text)}
-    footer{margin:28px 0 8px;color:var(--muted);font-size:13px;text-align:center}
+    .lang{display:flex;gap:8px}
+    .lang button{background:#0f141b;border:1px solid var(--stroke-2);color:var(--text);padding:8px 10px;border-radius:10px;cursor:pointer}
+    .lang button.active{background:var(--accent);color:#0b0e12;border:none}
+    .hero{background:linear-gradient(180deg,rgba(31,111,235,.12),rgba(0,0,0,0));border:1px solid var(--stroke);border-radius:16px;padding:18px;margin-bottom:20px}
+    .hero h2{margin:0 0 6px} .hero p{margin:0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{grid-column:span 12;background:var(--card);border:1px solid var(--stroke);border-radius:16px;box-shadow:var(--shadow)}
+    .pad{padding:18px}
+    .card h3{margin:6px 0 8px}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 10px}
+    .tag{background:var(--chip);border:1px solid var(--stroke-2);color:var(--muted);padding:6px 10px;border-radius:999px;font-size:12px}
+    .thumbs{display:flex;gap:12px;flex-wrap:wrap}
+    .thumbs img{width:320px;max-width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid var(--stroke-2)}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--stroke-2);background:#0f141b;color:var(--text)}
+    .btn.primary{background:linear-gradient(135deg,#1f6feb,#7551ff);border:none}
+    .btn.green{background:linear-gradient(135deg,#11c58b,#059669);border:none}
+    .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .kpi{background:#0f141b;border:1px dashed var(--stroke-2);border-radius:10px;padding:8px 10px;font-size:12px}
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin:20px 0 10px}
+    .section-title h2{margin:0}
+    footer{margin:26px 0 8px;text-align:center;color:var(--muted);font-size:13px}
+    @media(min-width:860px){ .half{grid-column:span 6} }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <!-- Header -->
     <header>
       <div class="brand">
-        <div class="avatar">DP</div>
+        <div class="logo">DP</div>
         <div class="title">
-          <h1 id="site-title">João Pessoa Real Estate — by Diego Porto (CRECI‑PB 10852)</h1>
-          <p id="tagline">Analytics para viver e investir melhor</p>
+          <h1 id="hdr-title">João Pessoa — Real Estate Insights (2025)</h1>
+          <p id="hdr-sub">Tableau stories + Power BI deep‑dive · Prices · Appreciation · STR Yield · Quality of Life</p>
         </div>
       </div>
-      <div class="actions">
-        <button class="lang" id="toggle-lang">PT / EN</button>
-        <a class="btn small" href="#stories" id="btn-stories">Ver Stories</a>
-        <a class="btn primary small" href="#contact" id="btn-contact">Fale comigo</a>
+      <div class="lang">
+        <button id="btn-pt" class="active">PT‑BR</button>
+        <button id="btn-en">EN</button>
       </div>
     </header>
 
-    <!-- Hero -->
     <section class="hero">
-      <div>
-        <h2 id="hero-title">Dados claros para decidir onde morar e investir</h2>
-        <p class="muted" id="hero-desc">
-          Preço por m², custo de vida, tempo de deslocamento, valorização e Airbnb STR yield —
-          com foco em João Pessoa e comparação com capitais brasileiras.
+      <h2 id="hero-h">Decision‑ready analytics for investors & relocations</h2>
+      <p id="hero-p">
+        Compare Brazilian capitals and zoom into João Pessoa with clear KPIs and pragmatic storytelling.
+        PDF, PBIX and public links included.
+      </p>
+    </section>
+
+    <!-- ============ TABLEAU STORIES ============ -->
+    <div class="section-title">
+      <h2 id="tbl-title">Tableau Stories (2025)</h2>
+      <a class="btn" id="tbl-profile" target="_blank" rel="noopener"
+         href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes">Open my Tableau Profile</a>
+    </div>
+
+    <section class="grid">
+      <!-- Story 1 -->
+      <article class="card half">
+        <div class="pad">
+          <h3 id="s1-h">Quality of Life in Brazilian Capitals</h3>
+          <p class="muted" id="s1-p">
+            Green area per capita, commuting time and Numbeo index. João Pessoa ranks at the top for livability.
+          </p>
+          <div class="thumbs">
+            <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story1_qualidade_de_vida.png"
+                 alt="Story 1 — Quality of Life">
+          </div>
+          <div class="actions">
+            <a class="btn" id="s1-open" target="_blank" rel="noopener"
+               href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes">Open on Tableau Public</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Story 2 -->
+      <article class="card half">
+        <div class="pad">
+          <h3 id="s2-h">Cost of Living & Housing Market</h3>
+          <p class="muted" id="s2-p">
+            Average rent, prime‑zone price per m² and monthly living cost across capitals.
+          </p>
+          <div class="thumbs">
+            <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story2_custo_vida_mercado.png"
+                 alt="Story 2 — Cost of Living & Market">
+          </div>
+          <div class="actions">
+            <a class="btn" id="s2-open" target="_blank" rel="noopener"
+               href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes">Open on Tableau Public</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Story 3 full width -->
+      <article class="card">
+        <div class="pad">
+          <h3 id="s3-h">Investment Opportunities — João Pessoa vs. Capitals</h3>
+          <p class="muted" id="s3-p">
+            Prime‑zone price, annual appreciation (FipeZAP 2025) and Airbnb STR Yield comparison. João Pessoa combines
+            low entry price, solid appreciation and the highest STR yield among peers.
+          </p>
+          <div class="thumbs">
+            <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story3_oportunidades_investimento.png"
+                 alt="Story 3 — Opportunities">
+          </div>
+          <div class="actions">
+            <a class="btn primary" id="s3-open" target="_blank" rel="noopener"
+               href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes">Open on Tableau Public</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ POWER BI ============ -->
+    <div class="section-title" style="margin-top:22px">
+      <h2 id="pbi-title">Power BI Analysis — João Pessoa</h2>
+      <span class="muted" id="pbi-sub">Deep‑dive: neighborhood quality, appreciation and risk vs. return.</span>
+    </div>
+
+    <section class="card">
+      <div class="pad">
+        <h3 id="pbi-h3">João Pessoa Real Estate — Market Insights (Power BI)</h3>
+        <p class="muted" id="pbi-desc">
+          Priority view for investors and relocations: neighborhood quality index, appreciation map and risk‑return matrix.
+          Built with a clean star‑schema and concise DAX KPIs.
         </p>
+
         <div class="kpis">
-          <div class="kpi">Tableau Stories</div>
-          <div class="kpi">FipeZAP • Numbeo</div>
-          <div class="kpi">Airbnb STR Yield</div>
+          <div class="kpi">Clean star‑schema</div>
+          <div class="kpi">DAX KPIs</div>
+          <div class="kpi">Drilldowns</div>
         </div>
-      </div>
-      <div>
-        <span class="chip" id="chip-cta">Atendo investidores, relocação e nômades digitais</span>
-      </div>
-    </section>
 
-    <!-- Tableau Stories -->
-    <section class="section" id="stories">
-      <h2 id="stories-title">Stories interativos</h2>
-      <p class="muted" id="stories-sub">Explore os três painéis e compare as capitais — destaque para João Pessoa.</p>
-
-      <div class="grid">
-        <!-- Story 1 -->
-        <article class="card">
-          <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story1_qualidade_de_vida.png" alt="Quality of Life">
-          <div class="pad">
-            <h3 id="s1-title">Qualidade de Vida (2025)</h3>
-            <p class="muted" id="s1-desc">Área verde per capita, tempo de deslocamento e índice Numbeo.</p>
-            <div class="kpis">
-              <div class="kpi" id="s1-kpi1">João Pessoa: mobilidade líder</div>
-              <div class="kpi" id="s1-kpi2">Rio & SP com piores tempos</div>
-            </div>
-            <p>
-              <a class="btn" target="_blank" rel="noopener" href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes" id="btn-s1">
-                Tableau Public
-              </a>
-            </p>
-          </div>
-        </article>
-
-        <!-- Story 2 -->
-        <article class="card">
-          <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story2_custo_vida_mercado.png" alt="Cost of living and market">
-          <div class="pad">
-            <h3 id="s2-title">Custo de Vida & Mercado (2025)</h3>
-            <p class="muted" id="s2-desc">Aluguel 2Q, preço por m² em área nobre e gasto mensal por pessoa.</p>
-            <div class="kpis">
-              <div class="kpi" id="s2-kpi1">João Pessoa acessível</div>
-              <div class="kpi" id="s2-kpi2">SP & RJ muito acima</div>
-            </div>
-            <p>
-              <a class="btn" target="_blank" rel="noopener" href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes" id="btn-s2">
-                Tableau Public
-              </a>
-            </p>
-          </div>
-        </article>
-
-        <!-- Story 3 -->
-        <article class="card">
-          <img src="https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story3_oportunidades_investimento.png" alt="Investment opportunities">
-          <div class="pad">
-            <h3 id="s3-title">Oportunidades (2025)</h3>
-            <p class="muted" id="s3-desc">Valorização anual (FipeZAP), preço por m² e Airbnb STR Yield.</p>
-            <div class="kpis">
-              <div class="kpi" id="s3-kpi1">JP: 18,25% + 13% STR</div>
-              <div class="kpi" id="s3-kpi2">BH/POA &lt; 6% STR</div>
-            </div>
-            <p>
-              <a class="btn" target="_blank" rel="noopener" href="https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes" id="btn-s3">
-                Tableau Public
-              </a>
-            </p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Why João Pessoa + Contact -->
-    <section class="section two">
-      <div class="card">
-        <div class="pad">
-          <h2 id="why-title">Por que João Pessoa?</h2>
-          <p class="muted" id="why-desc">
-            Combinação rara de preço de entrada mais baixo, boa valorização e melhor qualidade de vida:
-            mais áreas verdes, menor tempo de deslocamento e custo mensal inferior às metrópoles. Ideal para
-            morar, relocação familiar, nômades digitais e renda de aluguel de temporada.
-          </p>
-          <div class="kpis">
-            <div class="kpi" id="why-k1">Praias urbanas</div>
-            <div class="kpi" id="why-k2">Mobilidade eficiente</div>
-            <div class="kpi" id="why-k3">Custo de vida menor</div>
-          </div>
+        <div class="thumbs" style="margin-top:12px">
+          <img src="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/Quality%20of%20life%20index%20by%20Neighborhood.png"
+               alt="Quality of Life by Neighborhood (Power BI)">
+          <img src="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/Valorização.png"
+               alt="Valorização (Power BI)">
+          <img src="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/risco-vs-retorno.png"
+               alt="Risk vs Return (Power BI)">
         </div>
-      </div>
 
-      <!-- Contact -->
-      <div class="card" id="contact">
-        <div class="pad">
-          <h2 id="contact-title">Fale comigo</h2>
-          <p class="muted" id="contact-sub">Quer um estudo sob medida? Envie uma mensagem.</p>
-          <div class="actions" style="gap:10px;flex-wrap:wrap">
-            <a class="btn primary" id="btn-form" target="_blank" rel="noopener" href="https://tally.so/r/mByqDN">Preencher Formulário</a>
-            <a class="btn" id="btn-whatsapp" target="_blank" rel="noopener" href="https://wa.me/5583993407446?text=Olá%20Diego,%20quero%20saber%20mais%20sobre%20João%20Pessoa%20Real%20Estate.">WhatsApp</a>
-            <a class="btn" id="btn-email" href="mailto:diego.porto10@gmail.com">E‑mail</a>
-          </div>
-          <p class="muted" style="margin-top:10px" id="creci-note">
-            Atendimento por Diego Porto (<strong>CRECI‑PB 10852</strong>) — João Pessoa / PB.
-          </p>
+        <div class="actions" style="margin-top:14px">
+          <a class="btn green" target="_blank" rel="noopener"
+             href="https://github.com/diegoporto10/joao-pessoa-real-estate/raw/main/An%C3%A1lises%20Imobili%C3%A1rias.pbix">Download PBIX</a>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://github.com/diegoporto10/joao-pessoa-real-estate/raw/main/quality-of-life.pdf">PDF Report</a>
+          <a class="btn primary" target="_blank" rel="noopener"
+             href="https://github.com/diegoporto10/joao-pessoa-real-estate">GitHub Repo</a>
         </div>
+
+        <!-- If you publish the PBIX to web, paste the iframe src below and uncomment.
+        <div style="margin-top:16px;border:1px solid var(--stroke);border-radius:12px;overflow:hidden">
+          <iframe title="JP Real Estate (Power BI)" width="100%" height="520" frameborder="0"
+                  src="YOUR_PUBLISH_TO_WEB_IFRAME_SRC_HERE" allowfullscreen="true"></iframe>
+        </div>
+        -->
       </div>
     </section>
 
     <footer>
-      © <span id="y"></span> Diego Porto (CRECI‑PB 10852) — Real Estate Analytics · João Pessoa / BR (UTC−03)
+      © <span id="yr"></span> Diego Porto — João Pessoa Real Estate Analytics
     </footer>
   </div>
 
   <script>
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // simple i18n (PT/EN)
+    // Simple i18n
+    const $ = s => document.getElementById(s);
     const T = {
       pt: {
-        siteTitle:"João Pessoa Real Estate — by Diego Porto (CRECI‑PB 10852)",
-        tagline:"Analytics para viver e investir melhor",
-        btnStories:"Ver Stories", btnContact:"Fale comigo",
-        heroTitle:"Dados claros para decidir onde morar e investir",
-        heroDesc:"Preço por m², custo de vida, tempo de deslocamento, valorização e Airbnb STR yield — com foco em João Pessoa e comparação com capitais brasileiras.",
-        chipCta:"Atendo investidores, relocação e nômades digitais",
-        storiesTitle:"Stories interativos",
-        storiesSub:"Explore os três painéis e compare as capitais — destaque para João Pessoa.",
-        s1Title:"Qualidade de Vida (2025)", s1Desc:"Área verde per capita, tempo de deslocamento e índice Numbeo.",
-        s1K1:"João Pessoa: mobilidade líder", s1K2:"Rio & SP com piores tempos",
-        s2Title:"Custo de Vida & Mercado (2025)", s2Desc:"Aluguel 2Q, preço por m² em área nobre e gasto mensal por pessoa.",
-        s2K1:"João Pessoa acessível", s2K2:"SP & RJ muito acima",
-        s3Title:"Oportunidades (2025)", s3Desc:"Valorização anual (FipeZAP), preço por m² e Airbnb STR Yield.",
-        s3K1:"JP: 18,25% + 13% STR", s3K2:"BH/POA < 6% STR",
-        whyTitle:"Por que João Pessoa?",
-        whyDesc:"Combinação rara de preço de entrada mais baixo, boa valorização e melhor qualidade de vida: mais áreas verdes, menor tempo de deslocamento e custo mensal inferior às metrópoles. Ideal para morar, relocação familiar, nômades digitais e renda de aluguel de temporada.",
-        whyK1:"Praias urbanas", whyK2:"Mobilidade eficiente", whyK3:"Custo de vida menor",
-        contactTitle:"Fale comigo", contactSub:"Quer um estudo sob medida? Envie uma mensagem.",
-        btnForm:"Preencher Formulário", btnWhats:"WhatsApp", btnEmail:"E‑mail",
-        creciNote:"Atendimento por Diego Porto (CRECI‑PB 10852) — João Pessoa / PB."
+        hdrTitle: "João Pessoa — Insights Imobiliários (2025)",
+        hdrSub:  "Stories no Tableau + deep‑dive em Power BI · Preços · Valorização · STR Yield · Qualidade de Vida",
+        heroH:   "Análises prontas para decisão — investidores e relocação",
+        heroP:   "Compare capitais e aprofunde em João Pessoa com KPIs claros e storytelling pragmático. Links públicos, PDF e PBIX inclusos.",
+
+        tblTitle:"Stories no Tableau (2025)",
+        tblBtn:  "Abrir meu perfil no Tableau",
+        s1h:     "Qualidade de Vida nas Capitais Brasileiras",
+        s1p:     "Área verde per capita, tempo de deslocamento e índice Numbeo. João Pessoa lidera em qualidade de vida.",
+        s2h:     "Custo de Vida & Mercado Imobiliário",
+        s2p:     "Aluguel médio, preço por m² em área nobre e custo mensal por capital.",
+        s3h:     "Oportunidades de Investimento — João Pessoa vs. Capitais",
+        s3p:     "Preço em zonas nobres, valorização anual (FipeZAP 2025) e Airbnb STR Yield. João Pessoa combina baixo preço de entrada, boa valorização e o maior retorno de aluguel de temporada.",
+        open:    "Abrir no Tableau Public",
+
+        pbiTitle:"Análise Power BI — João Pessoa",
+        pbiSub:  "Estudo aprofundado: qualidade por bairro, valorização e risco vs. retorno.",
+        pbiH3:   "João Pessoa Real Estate — Market Insights (Power BI)",
+        pbiDesc: "Visão prioritária para investidores e relocação: índice de qualidade por bairro, mapa de valorização e matriz risco‑retorno. Modelo limpo e KPIs concisos.",
+
+        dlPbix:  "Baixar PBIX",
+        pdf:     "Relatório PDF",
+        repo:    "Repositório no GitHub"
       },
       en: {
-        siteTitle:"João Pessoa Real Estate — by Diego Porto (CRECI‑PB 10852)",
-        tagline:"Analytics to live and invest better",
-        btnStories:"See Stories", btnContact:"Contact",
-        heroTitle:"Clear data to decide where to live & invest",
-        heroDesc:"Price per sqm, cost of living, commute time, appreciation and Airbnb STR yield — focused on João Pessoa with comparisons across Brazilian capitals.",
-        chipCta:"For investors, relocations and digital nomads",
-        storiesTitle:"Interactive stories",
-        storiesSub:"Explore the three dashboards and compare capitals — João Pessoa stands out.",
-        s1Title:"Quality of Life (2025)", s1Desc:"Green area per capita, commuting time and Numbeo index.",
-        s1K1:"João Pessoa: leading mobility", s1K2:"Rio & São Paulo with longer commutes",
-        s2Title:"Cost of Living & Market (2025)", s2Desc:"2BR rent, prime-zone price per m² and monthly cost per person.",
-        s2K1:"João Pessoa remains affordable", s2K2:"São Paulo & Rio much higher",
-        s3Title:"Opportunities (2025)", s3Desc:"Annual appreciation (FipeZAP), price per m² and Airbnb STR yield.",
-        s3K1:"JP: 18.25% + 13% STR", s3K2:"BH/POA < 6% STR",
-        whyTitle:"Why João Pessoa?",
-        whyDesc:"A rare mix of lower entry prices, solid appreciation and better quality of life: more green areas, shorter commute times and lower monthly costs than major metros. Ideal to live, relocate, work remotely and capture short‑term rental income.",
-        whyK1:"Urban beaches", whyK2:"Efficient mobility", whyK3:"Lower living costs",
-        contactTitle:"Contact", contactSub:"Need a tailored study? Send a message.",
-        btnForm:"Fill the Form", btnWhats:"WhatsApp", btnEmail:"Email",
-        creciNote:"Service by Diego Porto (CRECI‑PB 10852) — João Pessoa / PB."
+        hdrTitle: "João Pessoa — Real Estate Insights (2025)",
+        hdrSub:  "Tableau stories + Power BI deep‑dive · Prices · Appreciation · STR Yield · Quality of Life",
+        heroH:   "Decision‑ready analytics for investors & relocations",
+        heroP:   "Compare capitals and zoom into João Pessoa with clear KPIs and pragmatic storytelling. Public links, PDF and PBIX included.",
+
+        tblTitle:"Tableau Stories (2025)",
+        tblBtn:  "Open my Tableau Profile",
+        s1h:     "Quality of Life in Brazilian Capitals",
+        s1p:     "Green area per capita, commuting time and Numbeo index. João Pessoa stands out for livability.",
+        s2h:     "Cost of Living & Housing Market",
+        s2p:     "Average rent, prime‑zone price per m² and monthly living cost.",
+        s3h:     "Investment Opportunities — João Pessoa vs. Capitals",
+        s3p:     "Prime‑zone price, annual appreciation (FipeZAP 2025) and Airbnb STR yield. João Pessoa mixes low entry price, solid appreciation and the highest STR yield.",
+        open:    "Open on Tableau Public",
+
+        pbiTitle:"Power BI Analysis — João Pessoa",
+        pbiSub:  "Deep‑dive: neighborhood quality, appreciation and risk vs. return.",
+        pbiH3:   "João Pessoa Real Estate — Market Insights (Power BI)",
+        pbiDesc: "Priority view for investors and relocations: neighborhood quality index, appreciation map and risk‑return matrix. Clean model and concise DAX KPIs.",
+
+        dlPbix:  "Download PBIX",
+        pdf:     "PDF Report",
+        repo:    "GitHub Repo"
       }
     };
 
-    let lang = 'pt';
-    const $ = id => document.getElementById(id);
-
-    function applyLang(){
+    function applyLang(lang){
       const t = T[lang];
-      $('site-title').textContent = t.siteTitle;
-      $('tagline').textContent = t.tagline;
-      $('btn-stories').textContent = t.btnStories;
-      $('btn-contact').textContent = t.btnContact;
-      $('hero-title').textContent = t.heroTitle;
-      $('hero-desc').textContent = t.heroDesc;
-      $('chip-cta').textContent = t.chipCta;
-      $('stories-title').textContent = t.storiesTitle;
-      $('stories-sub').textContent = t.storiesSub;
+      $("hdr-title").textContent = t.hdrTitle;
+      $("hdr-sub").textContent   = t.hdrSub;
+      $("hero-h").textContent    = t.heroH;
+      $("hero-p").textContent    = t.heroP;
 
-      $('s1-title').textContent = t.s1Title; $('s1-desc').textContent = t.s1Desc;
-      $('s1-kpi1').textContent = t.s1K1; $('s1-kpi2').textContent = t.s1K2;
+      $("tbl-title").textContent = t.tblTitle;
+      $("tbl-profile").textContent = t.tblBtn;
 
-      $('s2-title').textContent = t.s2Title; $('s2-desc').textContent = t.s2Desc;
-      $('s2-kpi1').textContent = t.s2K1; $('s2-kpi2').textContent = t.s2K2;
+      $("s1-h").textContent = t.s1h; $("s1-p").textContent = t.s1p; $("s1-open").textContent = t.open;
+      $("s2-h").textContent = t.s2h; $("s2-p").textContent = t.s2p; $("s2-open").textContent = t.open;
+      $("s3-h").textContent = t.s3h; $("s3-p").textContent = t.s3p; $("s3-open").textContent = t.open;
 
-      $('s3-title').textContent = t.s3Title; $('s3-desc').textContent = t.s3Desc;
-      $('s3-kpi1').textContent = t.s3K1; $('s3-kpi2').textContent = t.s3K2;
+      $("pbi-title").textContent = t.pbiTitle;
+      $("pbi-sub").textContent   = t.pbiSub;
+      $("pbi-h3").textContent    = t.pbiH3;
+      $("pbi-desc").textContent  = t.pbiDesc;
 
-      $('why-title').textContent = t.whyTitle; $('why-desc').textContent = t.whyDesc;
-      $('why-k1').textContent = t.whyK1; $('why-k2').textContent = t.whyK2; $('why-k3').textContent = t.whyK3;
-
-      $('contact-title').textContent = t.contactTitle; $('contact-sub').textContent = t.contactSub;
-      $('btn-form').textContent = t.btnForm; $('btn-whatsapp').textContent = t.btnWhats; $('btn-email').textContent = t.btnEmail;
-      $('creci-note').textContent = t.creciNote;
-
-      document.documentElement.lang = (lang === 'pt' ? 'pt-BR' : 'en');
-      // Update CTA labels in header too
-      $('btn-stories').textContent = t.btnStories;
-      $('btn-contact').textContent = (lang==='pt' ? 'Fale comigo' : 'Contact');
-      // Update WhatsApp prefilled text language
-      const wa = $('btn-whatsapp');
-      const msgPT = "Olá Diego, quero saber mais sobre João Pessoa Real Estate.";
-      const msgEN = "Hi Diego, I'd like to know more about João Pessoa Real Estate.";
-      const txt = encodeURIComponent(lang==='pt' ? msgPT : msgEN);
-      wa.href = "https://wa.me/5583993407446?text=" + txt;
-      // Update form button link text (link stays the same)
-      const formBtn = $('btn-form');
-      formBtn.href = "https://tally.so/r/mByqDN";
+      // Buttons in Power BI section
+      document.querySelectorAll('.actions a')[0].textContent = lang==='pt'?t.dlPbix:t.dlPbix; // first actions block is in PBI; safer left as static below
     }
 
-    $('toggle-lang').addEventListener('click', () => { lang = (lang === 'pt' ? 'en' : 'pt'); applyLang(); });
-    applyLang();
+    // Initial
+    $("yr").textContent = new Date().getFullYear();
+    applyLang("en"); // default English
+    $("btn-en").classList.add("active");
+    $("btn-pt").classList.remove("active");
+
+    // Toggle
+    $("btn-pt").onclick = () => { applyLang("pt"); $("btn-pt").classList.add("active"); $("btn-en").classList.remove("active"); };
+    $("btn-en").onclick = () => { applyLang("en"); $("btn-en").classList.add("active"); $("btn-pt").classList.remove("active"); };
   </script>
 </body>
 </html>
