@@ -24,9 +24,13 @@
     "image": "https://raw.githubusercontent.com/diegoporto10/real-estate-joao-pessoa/main/images/story3_oportunidades_investimento.png",
     "address": {"@type":"PostalAddress","addressLocality":"João Pessoa","addressRegion":"PB","addressCountry":"BR"},
     "email": "mailto:diego.porto10@gmail.com",
-    "telephone": "+55 83 99999-9999",
+    "telephone": "+55 83 99340-7446",
     "description": "Análises imobiliárias e oportunidades em João Pessoa e capitais brasileiras: preço por m², valorização, custo de vida e Airbnb STR yield.",
-    "sameAs": ["https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes","https://github.com/diegoporto10"]
+    "sameAs": [
+      "https://public.tableau.com/app/profile/diego.porto.de.vasconcelos.ribeiro/vizzes",
+      "https://github.com/diegoporto10",
+      "https://github.com/diegoporto10/joao-pessoa-real-estate"
+    ]
   }
   </script>
 
@@ -103,8 +107,8 @@
         </div>
         <div class="contactbar">
           <span class="chip" id="chip-name">Diego Porto</span>
-          <span class="chip" id="chip-creci">CRECI-PB 000000</span>
-          <a class="chip" id="chip-phone" href="#" target="_blank" rel="noopener">📞 +55 83 00000-0000</a>
+          <span class="chip" id="chip-creci">CRECI-PB 10852</span>
+          <a class="chip" id="chip-phone" href="#" target="_blank" rel="noopener">📞 +55 83 99340-7446</a>
           <a class="chip" id="chip-whats" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
           <a class="chip" href="mailto:diego.porto10@gmail.com">✉️ diego.porto10@gmail.com</a>
           <a class="chip" id="chip-form" href="#" target="_blank" rel="noopener">📝 Formulário</a>
@@ -198,6 +202,48 @@
       </div>
     </section>
 
+    <!-- Power BI Project -->
+    <section class="section" id="pbi">
+      <h2 id="pbi-title">João Pessoa Real Estate — Market Insights (Power BI)</h2>
+      <p class="muted" id="pbi-sub">
+        Visão executiva: índice de qualidade por bairro, mapa de valorização e matriz risco-retorno. Modelo limpo e KPIs DAX concisos.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <a href="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/qualidade-de-vida.png" download>
+            <img src="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/qualidade-de-vida.png" alt="Qualidade de vida por bairro (Power BI)">
+          </a>
+          <div class="pad">
+            <h3 id="pbi-card-1">Quality of Life (Neighborhood)</h3>
+          </div>
+        </article>
+
+        <article class="card">
+          <a href="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/valorizacao.png" download>
+            <img src="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/valorizacao.png" alt="Mapa de valorização (Power BI)">
+          </a>
+          <div class="pad">
+            <h3 id="pbi-card-2">Appreciation Map</h3>
+          </div>
+        </article>
+
+        <article class="card">
+          <a href="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/risco-vs-retorno.png" download>
+            <img src="https://raw.githubusercontent.com/diegoporto10/joao-pessoa-real-estate/main/images/risco-vs-retorno.png" alt="Risco vs Retorno (Power BI)">
+          </a>
+          <div class="pad">
+            <h3 id="pbi-card-3">Risk vs Return</h3>
+          </div>
+        </article>
+      </div>
+
+      <p class="actions" style="margin-top:12px">
+        <a class="btn" id="btn-pbix" target="_blank" rel="noopener" href="https://github.com/diegoporto10/joao-pessoa-real-estate/raw/main/An%C3%A1lises%20Imobili%C3%A1rias.pbix">Download PBIX</a>
+        <a class="btn" id="btn-repo" target="_blank" rel="noopener" href="https://github.com/diegoporto10/joao-pessoa-real-estate">GitHub Repo</a>
+      </p>
+    </section>
+
     <!-- Why João Pessoa + Contact -->
     <section class="section two">
       <div class="card">
@@ -237,39 +283,41 @@
     </section>
 
     <footer>
-      © <span id="y"></span> <span id="f-name">Diego Porto</span> — <span id="f-tag">Real Estate Analytics</span> · <span id="f-creci">CRECI-PB 000000</span>
+      © <span id="y"></span> <span id="f-name">Diego Porto</span> — <span id="f-tag">Real Estate Analytics</span> · <span id="f-creci">CRECI-PB 10852</span>
     </footer>
   </div>
 
   <script>
-    // ========= EDIT YOUR CONTACT INFO HERE =========
+    // ========= EDITABLE CONTACT =========
     const CONTACT = {
       name: 'Diego Porto',
-      creci: 'CRECI-PB 000000',                // <-- put your real CRECI
-      phone: '+55 83 00000-0000',             // clickable phone
-      whatsapp: '+558300000000',              // E.164, no spaces (for wa.me)
+      creci: 'CRECI-PB 10852',
+      phone: '+55 83 99340-7446',
+      whatsapp: '5583993407446',
       email: 'diego.porto10@gmail.com',
-      form: 'https://formspree.io/f/your-id'  // or Google Forms link
+      form: 'https://tally.so/r/mByqDN'
     };
-    // ===============================================
+    // ====================================
 
     // year
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // fill contact bar & footer
     const $ = id => document.getElementById(id);
+
+    // contact bar + footer + links
     $('chip-name').textContent = CONTACT.name;
     $('chip-creci').textContent = CONTACT.creci;
     $('chip-phone').textContent = `📞 ${CONTACT.phone}`;
     $('chip-phone').href = `tel:${CONTACT.phone.replace(/[^\d+]/g,'')}`;
-    $('chip-whats').href = `https://wa.me/${CONTACT.whatsapp.replace(/[^\d]/g,'')}?text=Ol%C3%A1%20Diego,%20quero%20saber%20mais%20sobre%20Jo%C3%A3o%20Pessoa%20Real%20Estate.`;
+    const wa = `https://wa.me/${CONTACT.whatsapp.replace(/[^\d]/g,'')}?text=Ol%C3%A1%20Diego,%20quero%20saber%20mais%20sobre%20Jo%C3%A3o%20Pessoa%20Real%20Estate.`;
+    $('chip-whats').href = wa;
     $('chip-form').href = CONTACT.form;
-    $('btn-whatsapp').href = $('chip-whats').href;
+    $('btn-whatsapp').href = wa;
     $('btn-form').href = CONTACT.form;
     $('f-name').textContent = CONTACT.name;
     $('f-creci').textContent = CONTACT.creci;
 
-    // Simple i18n PT/EN
+    // i18n
     const T = {
       pt: {
         siteTitle:"João Pessoa Real Estate — by Diego Porto",
@@ -283,11 +331,18 @@
         s1Title:"Qualidade de Vida (2025)", s1Desc:"Área verde per capita, tempo de deslocamento e índice Numbeo.",
         s2Title:"Custo de Vida & Mercado (2025)", s2Desc:"Aluguel 2Q, preço por m² em área nobre e gasto mensal por pessoa.",
         s3Title:"Oportunidades (2025)", s3Desc:"Valorização anual (FipeZAP), preço por m² e Airbnb STR Yield.",
+
+        pbiTitle:"João Pessoa Real Estate — Market Insights (Power BI)",
+        pbiSub:"Visão executiva: índice de qualidade por bairro, mapa de valorização e matriz risco-retorno. Modelo limpo e KPIs DAX concisos.",
+
         whyTitle:"Por que João Pessoa?",
         whyDesc:"Combinação rara de preço de entrada mais baixo, boa valorização e melhor qualidade de vida: mais áreas verdes, menor tempo de deslocamento e custo mensal inferior às metrópoles. Ideal para morar, relocação familiar, nômades digitais e renda de aluguel de temporada.",
         contactTitle:"Fale comigo", contactSub:"Quer um estudo sob medida? Envie uma mensagem.",
         btnSend:"Enviar",
-        fTag:"Real Estate Analytics"
+        fTag:"Real Estate Analytics",
+
+        pbiBtnPbix:"Download PBIX",
+        pbiBtnRepo:"GitHub Repo"
       },
       en: {
         siteTitle:"João Pessoa Real Estate — by Diego Porto",
@@ -301,11 +356,18 @@
         s1Title:"Quality of Life (2025)", s1Desc:"Green area per capita, commuting time and Numbeo index.",
         s2Title:"Cost of Living & Market (2025)", s2Desc:"2BR rent, prime-zone price per m² and monthly cost per person.",
         s3Title:"Opportunities (2025)", s3Desc:"Annual appreciation (FipeZAP), price per m² and Airbnb STR yield.",
+
+        pbiTitle:"João Pessoa Real Estate — Market Insights (Power BI)",
+        pbiSub:"Executive view: neighborhood quality index, appreciation map and risk–return matrix. Clean model and concise DAX KPIs.",
+
         whyTitle:"Why João Pessoa?",
         whyDesc:"A rare mix of lower entry prices, solid appreciation and better quality of life: more green areas, shorter commute times and lower monthly costs than major metros. Great to live, relocate, work remotely and capture short-term rental income.",
         contactTitle:"Contact", contactSub:"Need a tailored study? Send a message.",
         btnSend:"Send",
-        fTag:"Real Estate Analytics"
+        fTag:"Real Estate Analytics",
+
+        pbiBtnPbix:"Download PBIX",
+        pbiBtnRepo:"GitHub Repo"
       }
     };
 
@@ -319,26 +381,34 @@
       $('hero-title').textContent = t.heroTitle;
       $('hero-desc').textContent = t.heroDesc;
       $('chip-cta').textContent = t.chipCta;
+
       $('stories-title').textContent = t.storiesTitle;
       $('stories-sub').textContent = t.storiesSub;
       $('s1-title').textContent = t.s1Title; $('s1-desc').textContent = t.s1Desc;
       $('s2-title').textContent = t.s2Title; $('s2-desc').textContent = t.s2Desc;
       $('s3-title').textContent = t.s3Title; $('s3-desc').textContent = t.s3Desc;
+
+      $('pbi-title').textContent = t.pbiTitle;
+      $('pbi-sub').textContent = t.pbiSub;
+      document.getElementById('btn-pbix').textContent = t.pbiBtnPbix;
+      document.getElementById('btn-repo').textContent = t.pbiBtnRepo;
+
       $('why-title').textContent = t.whyTitle; $('why-desc').textContent = t.whyDesc;
       $('contact-title').textContent = t.contactTitle; $('contact-sub').textContent = t.contactSub;
       $('btn-send').textContent = t.btnSend;
       $('f-tag').textContent = t.fTag;
+
       document.documentElement.lang = (lang === 'pt' ? 'pt-BR' : 'en');
       $('toggle-lang').textContent = (lang === 'pt' ? 'PT / EN' : 'EN / PT');
     }
+
     document.getElementById('toggle-lang').addEventListener('click', () => {
       lang = (lang === 'pt' ? 'en' : 'pt'); applyLang();
     });
     applyLang();
 
-    // Lightweight form handler → redirect to your external form (Google Forms or Formspree)
-    const form = document.getElementById('lead-form');
-    form.addEventListener('submit', (e) => {
+    // Simple form handler → open your Tally form
+    document.getElementById('lead-form').addEventListener('submit', (e) => {
       e.preventDefault();
       window.open(CONTACT.form, '_blank');
     });
